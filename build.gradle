@@ -16,10 +16,8 @@ repositories {
 		url = 'https://maven.parchmentmc.org'
 	}
 	maven {
-		url "https://www.cursemaven.com"
-		content {
-			includeGroup "curse.maven"
-		}
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
 	}
 }
 
@@ -36,7 +34,7 @@ loom {
 
 fabricApi {
 	configureDataGeneration(){
-		setModId("quad-mstv-mrailv")
+		setModId("${mod_id}")
 		createSourceSet=true
 		client=true
 	}
@@ -47,17 +45,17 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.layered() {
 		officialMojangMappings()
-		parchment("org.parchmentmc.data:parchment-${project.p_mc_version}:${project.parchment_date}@zip")
+		parchment("org.parchmentmc.data:parchment-${project.minecraft_version}:${project.parchment_date}@zip")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
 
 	// MStV + mTorchV
-	modDatagenImplementation "curse.maven:more-stick-variants-1096913:${project.mstv_version_id}"
-	modDatagenImplementation "curse.maven:more-torch-variants-1099365:${project.mtorchv_version_id}"
+	modDatagenImplementation "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
+	modDatagenImplementation "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
 
-	modCompileOnly "curse.maven:more-stick-variants-1096913:${project.mstv_version_id}"
-	modCompileOnly "curse.maven:more-torch-variants-1099365:${project.mtorchv_version_id}"
+	modCompileOnly "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
+	modCompileOnly "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
 }
 
 processResources {
