@@ -3,6 +3,7 @@ package de.pnku.mstv_mrailv;
 import de.pnku.mstv_mrailv.init.MrailvBlockInit;
 import net.fabricmc.api.ClientModInitializer;
 
+import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -14,9 +15,10 @@ public class MoreRailVariantsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		String mcVersion = FabricLoader.getInstance().getModContainer("minecraft").get().getMetadata().getVersion().getFriendlyString();
 		boolean isLegacy = mcVersion.contains("1.21.4") || mcVersion.contains("1.21.5");
+		boolean isDev = FabricLoader.getInstance().isDevelopmentEnvironment();
 		for (Block railBlock : MrailvBlockInit.more_rail_blocks) {
 			if (isLegacy) {legacyAddToRenderLayerMap(railBlock);}
-			else {addToRenderLayerMap(railBlock);}
+			else {addToRenderLayerMap(railBlock, isDev);}
 		}
 	}
 
@@ -30,10 +32,11 @@ public class MoreRailVariantsClient implements ClientModInitializer {
 		}
 	}
 
-	private void addToRenderLayerMap(Block block) {
+	private void addToRenderLayerMap(Block block, boolean isDev) {
 		try {
 			Class<?> blockRenderLayerMap = Class.forName("net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap");
-			Class<?> chunkSectionLayerClass = Class.forName("net.minecraft.class_11515");
+			String chunkSectionLayerClassName = isDev ? "net.minecraft.client.renderer.chunk.ChunkSectionLayer" : "net.minecraft.class_11515";
+			Class<?> chunkSectionLayerClass = Class.forName(chunkSectionLayerClassName);
 			blockRenderLayerMap.getMethod("putBlock", Block.class, chunkSectionLayerClass)
 					.invoke(null, block, chunkSectionLayerClass.getEnumConstants()[2]);
 		} catch (Exception e) {
