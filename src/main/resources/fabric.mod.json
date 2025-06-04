@@ -8,7 +8,7 @@
     "pnku"
   ],
   "contact": {
-    "homepage": "https://pnku.de",
+    "homepage": "https://www.pnku.de",
     "email": "contact@pnku.de",
     "sources": "https://github.com/pnk2u/More-Rail-Variants",
     "issues": "https://github.com/pnk2u/More-Rail-Variants/issues"
@@ -40,7 +40,7 @@
   "custom": {
     "modmenu": {
       "links": {
-        "modmenu.discord": "https://discord.com/invite/sA42pp6cuX"
+        "modmenu.discord": "https://dsc.lieonlion.dev"
       }
     }
   }
