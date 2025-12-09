@@ -1,6 +1,14 @@
 <!--publish=false-->
 ### 1.0.6:
-- Fix inconsistency with vanilla behavior of _Powered_/_Activator Rails_ (including _Oak_) being able to transfer their powered state to each other regardless of type
-  > Powered/Activator Rails were incorrectly able to power each other whereas in vanilla only Rails of the same type can power each other,  
-  > i.e. only Powered Rails can power other Powered Rails and only Activator Rails can power other Activator Rails.  
-  > Now there are two new block tags: `quad-mstv-mrailv:all_powered_rails` and `quad-mstv-mrailv:all_activator_rails` and only Rails within the same tag can power each other.
+- Fix ``powered`` state being transferred between all _Powered Rail_ and _Activator Rail_ variants (incl. _Oak_)
+> Previously, _Powered Rails_ and _Activator Rails_ could power each other, which is not how vanilla behaves.  
+In vanilla Minecraft:
+> - Only _**Powered** Rails_ can power other _**Powered** Rails_.
+> - Only _**Activator** Rails_ can power other _**Activator** Rails_.
+>
+>
+> This has been corrected. For this purpose, two new block tags were added:
+> - `quad-mstv-mrailv:all_powered_rails`
+> - `quad-mstv-mrailv:all_activator_rails`
+>
+> Only rails within the same tag can now transfer power to each other.
