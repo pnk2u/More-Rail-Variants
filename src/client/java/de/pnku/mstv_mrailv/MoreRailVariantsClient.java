@@ -3,9 +3,7 @@ package de.pnku.mstv_mrailv;
 import de.pnku.mstv_mrailv.init.MrailvBlockInit;
 import net.fabricmc.api.ClientModInitializer;
 
-import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 
 
@@ -17,16 +15,19 @@ public class MoreRailVariantsClient implements ClientModInitializer {
 		boolean isLegacy = mcVersion.contains("1.21.4") || mcVersion.contains("1.21.5");
 		boolean isDev = FabricLoader.getInstance().isDevelopmentEnvironment();
 		for (Block railBlock : MrailvBlockInit.more_rail_blocks) {
-			if (isLegacy) {legacyAddToRenderLayerMap(railBlock);}
+			if (isLegacy) {legacyAddToRenderLayerMap(railBlock, isDev);}
 			else {addToRenderLayerMap(railBlock, isDev);}
 		}
 	}
 
-	private void legacyAddToRenderLayerMap(Block block) {
+	private void legacyAddToRenderLayerMap(Block block, boolean isDev) {
 		try {
 			Class<?> legacyBlockRenderLayerMap = Class.forName("net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap");
-			legacyBlockRenderLayerMap.getMethod("putBlock", Block.class, RenderType.class)
-					.invoke(legacyBlockRenderLayerMap.getField("INSTANCE").get(null), block, RenderType.cutout());
+            String renderTypeClassName = isDev ? "net.minecraft.client.renderer.RenderType" : "net.minecraft.class_1921";
+            Class<?> renderTypeClass = Class.forName(renderTypeClassName);
+            String renderTypeCutoutMethodName = isDev ? "cutout" : "method_23581";
+			legacyBlockRenderLayerMap.getMethod("putBlock", Block.class, renderTypeClass)
+					.invoke(legacyBlockRenderLayerMap.getField("INSTANCE").get(null), block, renderTypeClass.getMethod(renderTypeCutoutMethodName).invoke(null));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

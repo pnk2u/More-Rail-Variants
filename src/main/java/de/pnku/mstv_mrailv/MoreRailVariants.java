@@ -4,7 +4,7 @@ import de.pnku.mstv_mrailv.init.MrailvBlockInit;
 import de.pnku.mstv_mrailv.init.loot.MrailvLootConditions;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,8 +21,8 @@ public class MoreRailVariants implements ModInitializer {
 		MrailvLootConditions.registerMrailvLootConditions();
 	}
 
-	public static ResourceLocation asId(String path) {
-		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+	public static Identifier asId(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 
 }
