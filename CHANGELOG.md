@@ -1,4 +1,4 @@
-<!--publish=true-->
+<!--publish=false-->
 ### 1.0.6:
 - Fix ``powered`` state being transferred between all _Powered Rail_ and _Activator Rail_ variants (incl. _Oak_)
 > Previously, _Powered Rails_ and _Activator Rails_ could power each other, which is not how vanilla behaves.  
