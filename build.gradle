@@ -41,11 +41,11 @@ loom {
 }
 
 fabricApi {
-	configureDataGeneration(){
-		setModId("${mod_id}")
-		createSourceSet=true
-		client=true
-	}
+//	configureDataGeneration(){
+//		setModId("${mod_id}")
+//		createSourceSet=true
+//		client=true
+//	}
 }
 
 static List<Integer> previousMcVersion(int major, int minor, int patch) {
@@ -202,13 +202,13 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
 	// MStV + mTorchV
-	modDatagenImplementation "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
-	modDatagenImplementation "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
+    // modDatagenImplementation "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
+    // modDatagenImplementation "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
 
-	modCompileOnly "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
-    modLocalRuntime "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
-	modCompileOnly "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
-    modLocalRuntime "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
+	    modCompileOnly "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
+        modLocalRuntime "maven.modrinth:more-stick-variants:${project.mstv_version_id}"
+	    modCompileOnly "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
+        modLocalRuntime "maven.modrinth:more-torch-variants:${project.mtorchv_version_id}"
 }
 
 static def version_reduced(String input) { // Reduces a version string by one minor version and sets patch to 0

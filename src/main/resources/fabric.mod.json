@@ -22,9 +22,6 @@
     ],
     "client": [
       "de.pnku.mstv_mrailv.MoreRailVariantsClient"
-    ],
-    "fabric-datagen": [
-      "de.pnku.mstv_mrailv.MoreRailVariantDatagen"
     ]
   },
   "mixins": [
