@@ -1,3 +1,15 @@
+<a name="1.0.7"></a>
+### 1.0.7:
+- `1.20.1`, `1.21(.1)`: Fix Activator Rail behavior
+
+  <h2><sub><sub><sup><ins>Download 1.0.7 + 1.20.1</ins>:</sup>&#x200A;
+  <a title="Download (Modrinth):&#10;More Rail Variants 1.0.7 + 1.20.1" href="https://www.modrinth.com/mod/KE9A103T/version/Mwod5k39">
+  <img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>
+  <sup><img width=7 height=10 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"></sup>
+  <a title="Download (Curseforge):&#10;1.0.7 + 1.20.1 - More Rail Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-rail-variants/files/7731668">
+  <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
+  </sub></sub></h2>
+
 <a name="1.0.6"></a>
 ### 1.0.6:
 - Fix ``powered`` state being transferred between all _Powered Rail_ and _Activator Rail_ variants (incl. _Oak_)
