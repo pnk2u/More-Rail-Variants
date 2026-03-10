@@ -232,6 +232,11 @@ def minecraft_version_1() {
     else {return "99.0.0"} // Effectively no upper bound
 }
 
+def getJavaVersionNum() { if (project.minecraft_version.startsWith("1.20")) {return 17} else return 21 }
+var java_version = getJavaVersionNum()
+def getJavaVersionEnum() { if (project.minecraft_version.startsWith("1.20")) {return JavaVersion.VERSION_17} else return JavaVersion.VERSION_21 }
+var java_version_enum = getJavaVersionEnum()
+
 processResources {
     // Disregard Patch version from Fabric Loader for dependency
     var fabric_loader_version_0 = "${fabric_loader_version}".replaceFirst(/\.[^.]*$/, '.0')
@@ -240,26 +245,30 @@ processResources {
 			loader_version: fabric_loader_version_0, mod_id: mod_id, mod_name: mod_name,
 			mod_license: mod_license, mod_version: mod_version,
 			mod_description: mod_description, quad_version: quad_version, mstv_version: mstv_version,
-			minecraft_version: minecraft_version, minecraft_version_0: minecraft_version_0(), minecraft_version_1: minecraft_version_1()
+			minecraft_version: minecraft_version, minecraft_version_0: minecraft_version_0(), minecraft_version_1: minecraft_version_1(),
+            java_version: java_version
 	]
 	inputs.properties replaceProperties
 
 	filesMatching("fabric.mod.json") {
 		expand replaceProperties
 	}
+    filesMatching("*.mixins.json") {
+        expand replaceProperties
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
 
-java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = java_version
+}
 
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+java {
+    sourceCompatibility = java_version_enum
+    targetCompatibility = java_version_enum
 }
 
 jar {
