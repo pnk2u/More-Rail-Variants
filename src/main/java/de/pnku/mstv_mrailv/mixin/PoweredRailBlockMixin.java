@@ -12,11 +12,11 @@ import static de.pnku.mstv_mrailv.init.MrailvTags.*;
 @Mixin(PoweredRailBlock.class)
 public abstract class PoweredRailBlockMixin {
 
-    @Redirect(method = "isSameRailWithPower", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
-    private boolean redirectedIsSameRailWithPowerStateIs(BlockState state, Block block) {
-        return state.is(block) ||
-               state.is(ALL_POWERED_RAIL) && block.defaultBlockState().is(ALL_POWERED_RAIL) ||
-               state.is(ALL_ACTIVATOR_RAIL) && block.defaultBlockState().is(ALL_ACTIVATOR_RAIL);
+    @Redirect(method = "isSameRailWithPower", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z"))
+    private boolean redirectedIsSameRailWithPowerStateIs(BlockState state, Object block) {
+        return state.is((Block) block) ||
+               state.is(ALL_POWERED_RAIL) && ((Block) block).defaultBlockState().is(ALL_POWERED_RAIL) ||
+               state.is(ALL_ACTIVATOR_RAIL) && ((Block) block).defaultBlockState().is(ALL_ACTIVATOR_RAIL);
     }
 
 }

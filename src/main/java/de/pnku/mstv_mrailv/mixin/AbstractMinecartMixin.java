@@ -14,10 +14,10 @@ import static de.pnku.mstv_mrailv.init.MrailvTags.ALL_POWERED_RAIL;
 @Mixin(AbstractMinecart.class)
 public abstract class AbstractMinecartMixin {
 
-    @WrapOperation(method = "getRedstoneDirection", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z", ordinal = 0))
-    protected boolean wrappedGetRedstoneDirectionAtStateIs(BlockState blockState, Block block, Operation<Boolean> original) {
-        if (block.defaultBlockState().getBlock() == Blocks.POWERED_RAIL) {
+    @WrapOperation(method = "getRedstoneDirection", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z", ordinal = 0))
+    protected boolean wrappedGetRedstoneDirectionAtStateIs(BlockState blockState, Object object, Operation<Boolean> original) {
+        if (object instanceof Block block && block.defaultBlockState().getBlock() == Blocks.POWERED_RAIL) {
             return blockState.is(ALL_POWERED_RAIL);
-        } return  original.call(blockState, block);
+        } return  original.call(blockState, object);
     }
 }

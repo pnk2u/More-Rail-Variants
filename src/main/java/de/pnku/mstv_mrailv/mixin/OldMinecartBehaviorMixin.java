@@ -18,13 +18,13 @@ public abstract class OldMinecartBehaviorMixin extends MinecartBehavior {
         super(abstractMinecart);
     }
 
-    @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
-    private boolean redirectedMoveAlongTrackStateIs(BlockState blockState, Block block) {
-        return blockState.is(ACTIVATOR_RAIL_VARIANTS) || blockState.is(block);
+    @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z"))
+    private boolean redirectedMoveAlongTrackStateIs(BlockState blockState, Object block) {
+        return blockState.is(ACTIVATOR_RAIL_VARIANTS) || blockState.is((Block) block);
     }
 
-    @Redirect(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/world/level/block/Block;)Z"))
-    private boolean redirectedCalculateHaltTrackSpeedStateIs(BlockState blockState, Block block) {
-        return blockState.is(ALL_POWERED_RAIL) || blockState.is(block);
+    @Redirect(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z"))
+    private boolean redirectedCalculateHaltTrackSpeedStateIs(BlockState blockState, Object block) {
+        return blockState.is(ALL_POWERED_RAIL) || blockState.is((Block) block);
     }
 }

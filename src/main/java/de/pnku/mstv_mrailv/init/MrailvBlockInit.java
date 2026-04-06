@@ -1,6 +1,6 @@
 package de.pnku.mstv_mrailv.init;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -110,8 +110,8 @@ public class MrailvBlockInit {
             }
         more_rail_items.add(railItem);
         more_rail_wood_types.put(railItem, woodType);
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.addAfter(baseRailItem, railItem));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(entries -> entries.addAfter(baseRailItem, railItem));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.insertAfter(baseRailItem, railItem));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(entries -> entries.insertAfter(baseRailItem, railItem));
         return Registry.register(BuiltInRegistries.ITEM, asId(railNameByTypes(woodType, railType)), railItem);
     }
 
