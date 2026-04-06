@@ -1,3 +1,6 @@
 <!--publish=false-->
-### 1.0.7:
-- `1.20.1`, `1.21(.1)`: Fix Activator Rail behavior
+### 1.0.8:
+- `26.1`: Update to <ins>26.1</ins>
+
+<br></br>
+<sub>License update to [`CC-BY-NC-SA-4.0`](https://creativecommons.org/licenses/by-nc-sa/4.0/) (previously [`MIT`](https://choosealicense.com/licenses/mit))</sub>

@@ -2,7 +2,7 @@
 # <img height='48' align=right src="./src/main/resources/icon.png"> <p align="center">&emsp;&emsp;&emsp; More Rail Variants <sub><a title="More Rail Variants on Modrinth" href="https://www.modrinth.com/mod/more-rail-variants"><img width="40" src="https://img.shields.io/badge/-%20-%230f91?style=flat&logo=modrinth"></a></sub> <a title="More Rail Variants on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-rail-variants"><sub><img width="40" src="https://img.shields.io/badge/--%23f062?style=flat&logo=curseforge"></sub></a> </p>
 > <img align=left height="153" src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/More-Rail-Variants/pres/logo/logo_c.png">  
 >  A mod adding wood variants for Minecraft's Rail Block. <br><br><br><br>  
->  <details><summary><h5>Show in-game example image</h5></summary><br><img src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/More-Rail-Variants/pres/gh_readme_banner.png"><sup><br><!--CAPTION:PLACEHOLDER--></sup></details>  
+>  <details><summary><h5>Show in-game example image</h5></summary><br><img src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/More-Rail-Variants/pres/mr_desc_banner.png"><sup><br><!--CAPTION:PLACEHOLDER--></sup></details>  
 <br>  
 
 <a name="compatibility"></a>
@@ -14,7 +14,8 @@
       <td><strong>Minecraft</strong></td>
       <td>
         <a href="https://modrinth.com/mod/more-rail-variants/versions?g=1.20.1"><code>1.20.1</code></a><br>
-        <a href="https://modrinth.com/mod/more-rail-variants/versions?g=1.21&g=1.21.1"><code>1.21(.1)</code></a>, <a href="https://modrinth.com/mod/more-rail-variants/versions?g=1.21.4&g=1.21.5&g=1.21.6&g=1.21.7&g=1.21.8&g=1.21.9&g=1.21.10&g=1.21.11"><code>1.21.4</code>~<code>1.21.11</code></a>
+        <a href="https://modrinth.com/mod/more-rail-variants/versions?g=1.21&g=1.21.1"><code>1.21(.1)</code></a>, <a href="https://modrinth.com/mod/more-rail-variants/versions?g=1.21.4&g=1.21.5&g=1.21.6&g=1.21.7&g=1.21.8&g=1.21.9&g=1.21.10&g=1.21.11"><code>1.21.4</code>~<code>1.21.11</code></a><br>
+        <a href="https://modrinth.com/mod/more-rail-variants/versions?g=26.1"><code>26.1</code></a>
       </td>
     </tr>
   </thead>
@@ -28,7 +29,8 @@
     <tr>
       <td><strong>Requires</strong></td>
       <td>
-        <a href="https://modrinth.com/mod/fabric-api"><sub><img width="16" src="https://raw.githubusercontent.com/FabricMC/fabric/1.21.10/src/main/resources/assets/fabric/icon.png"></sub><code>Fabric API</code></a>
+        <a href="https://modrinth.com/mod/fabric-api"><sub><img width="16" src="https://raw.githubusercontent.com/FabricMC/fabric/1.21.10/src/main/resources/assets/fabric/icon.png"></sub><code>Fabric API</code></a><br>
+        <a href="https://modrinth.com/mod/more-stick-variants"><sub><img width="16" src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/More-Stick-Variants/pres/logo/logo_c.png"></sub><code>More Stick Variants</code></a>
       </td>
     </tr>
   </thead>
@@ -38,11 +40,12 @@
 <a name="translations"></a>
 ### <img height="24" align="left" src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/translate.svg"> Translations
 
-Currently available in:
-- English
-- German
-- Chinese Simplified (@[Surbenii](/../../../../Surbenii) with [PR #1](../../pull/1), added in [`1.0.3`](./CHANGELOG_history.md#1.0.3))
-- Ukrainian (@[StarmanMine142](/../../../../StarmanMine142) with [PR #3](../../pull/3), added in [`1.0.4`](./CHANGELOG_history.md#1.0.4))
+|Language|Translator|
+|--|--|
+|English||
+|German||
+|Chinese (zh_cn)|@[Surbenii](/../../../../Surbenii) with [PR #1](../../pull/1), added in [`1.0.3`](./CHANGELOG_history.md#1.0.3)|
+|Ukrainian|@[StarmanMine142](/../../../../StarmanMine142) with [PR #3](../../pull/3), added in [`1.0.4`](./CHANGELOG_history.md#1.0.4)|
 
 > [!NOTE]
 > > Want to help translate? If you can, please open a PR to the **default branch** [`1.21(.1)`](../../tree/1.21(.1)).  
@@ -56,20 +59,9 @@ Currently available in:
 ### Versions
 <a name="most-recent-version"></a>
 <!--CHANGELOG:START-->
-<a name="1.0.6"></a>
-#### 1.0.6[*](#footnote-*):
-- Fix ``powered`` state being transferred between all _Powered Rail_ and _Activator Rail_ variants (incl. _Oak_)
-> Previously, _Powered Rails_ and _Activator Rails_ could power each other, which is not how vanilla behaves.  
-In vanilla Minecraft:
-> - Only _**Powered** Rails_ can power other _**Powered** Rails_.
-> - Only _**Activator** Rails_ can power other _**Activator** Rails_.
->
->
-> This has been corrected. For this purpose, two new block tags were added:
-> - `quad-mstv-mrailv:all_powered_rails`
-> - `quad-mstv-mrailv:all_activator_rails`
->
-> Only rails within the same tag can now transfer power to each other.
+<a name="1.0.7"></a>
+#### 1.0.7[*](#footnote-*):
+- `1.20.1`, `1.21(.1)`: Fix Activator Rail behavior
 
 <h2><sub><sub><sup><ins>Download 1.0.6 + 1.21.4(-11)</ins>:</sup>&#x200A;
 <a title="Download (Modrinth):&#10;More Rail Variants 1.0.6 + 1.21.4(-11)" href="https://www.modrinth.com/mod/KE9A103T/version/LXM7tHN4">
