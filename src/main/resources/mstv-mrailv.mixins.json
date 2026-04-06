@@ -2,7 +2,7 @@
   "required": false ,
   "minVersion": "0.8" ,
   "package": "de.pnku.mstv_mrailv.mixin" ,
-  "compatibilityLevel": "JAVA_17" ,
+  "compatibilityLevel": "JAVA_${java_version}" ,
   "mixins": [
     "AbstractMinecartMixin" ,
     "PoweredRailBlockMixin"
