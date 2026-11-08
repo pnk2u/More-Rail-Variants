@@ -59,15 +59,14 @@
 ### Versions
 <a name="most-recent-version"></a>
 <!--CHANGELOG:START-->
-<a name="1.0.9"></a>
-#### 1.0.9[*](#footnote-*):
-- `26.2`: Fix _Mineshaft Minecart Chests_ in _Sulfur Caves_ not being able to contain the _Bounce Music Disc_
-- Fix _(**Dark Oak**) Torches_ not spawning in _Mesa Mineshafts_ when <ins>More Torch Variants</ins> (&#x200A;<sub><a title="More Torch Variants&#10;on Modrinth" href="https://modrinth.com/mod/more-torch-variants/"><img width=20 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a></sub><!--SEPARATOR_V:MR--><img width=5 height=8 src="https://raw.githubusercontent.com/pnk2u/resources/main/ModProjects/shared/pres/icon/separator_v.svg"><sub><a title="More Torch Variants&#10;on Curseforge" href="https://www.curseforge.com/minecraft/mc-mods/more-torch-variants/"><img width=20 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a></sub>&#x200A;) is installed 
+<a name="1.0.10"></a>
+#### 1.0.10[*](#footnote-*):
+- Revert `1.0.9`'s _(**Dark Oak**) Torch_ loot fix which caused the _Mineshaft Chest_ loot table to fail to load entirely (the fix was not necessary, as the loot table was already valid and working properly)
 
-<h2><sub><sub><sup><ins>Download 1.0.9 + 1.21.4(-11)</ins>:</sup>&#x200A;
-<a title="Download (Modrinth):&#10;More Rail Variants 1.0.9 + 1.21.4(-11)" href="https://www.modrinth.com/mod/KE9A103T/version/HbndvsKg">
+<h2><sub><sub><sup><ins>Download 1.0.10 + 1.21.4(-11)</ins>:</sup>&#x200A;
+<a title="Download (Modrinth):&#10;More Rail Variants 1.0.10 + 1.21.4(-11)" href="https://www.modrinth.com/mod/KE9A103T/version/i0SIwCjU">
 <img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
-<a title="Download (Curseforge):&#10;1.0.9 + 1.21.4(-11) - More Rail Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-rail-variants/files/9511885">
+<a title="Download (Curseforge):&#10;1.0.10 + 1.21.4(-11) - More Rail Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-rail-variants/files/9518747">
 <img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
 </sub></sub></h2>
 
