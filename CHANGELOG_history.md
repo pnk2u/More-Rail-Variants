@@ -1,3 +1,14 @@
+<a name="1.0.10"></a>
+### 1.0.10:
+- Revert `1.0.9`'s _(**Dark Oak**) Torch_ loot fix which caused the _Mineshaft Chest_ loot table to fail to load entirely (the fix was not necessary, as the loot table was already valid and working properly)
+
+<h2><sub><sub><sup><ins>Download 1.0.10 + 1.21(.1)</ins>:</sup>&#x200A;
+<a title="Download (Modrinth):&#10;More Rail Variants 1.0.10 + 1.21(.1)" href="https://www.modrinth.com/mod/KE9A103T/version/Xd2AcFvQ">
+<img width=26 src="https://img.shields.io/badge/-%20-%23032a?style=flat&logo=modrinth"></a>&#x200A;
+<a title="Download (Curseforge):&#10;1.0.10 + 1.21(.1) - More Rail Variants" href="https://www.curseforge.com/minecraft/mc-mods/more-rail-variants/files/9518718">
+<img width=26 src="https://img.shields.io/badge/--%23302a?style=flat&logo=curseforge"></a>
+</sub></sub></h2>
+
 <a name="1.0.9"></a>
 ### 1.0.9:
 - `26.2`: Fix _Mineshaft Minecart Chests_ in _Sulfur Caves_ not being able to contain the _Bounce Music Disc_
