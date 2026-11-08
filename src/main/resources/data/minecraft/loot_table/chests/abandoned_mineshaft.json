@@ -392,7 +392,7 @@
           "weight": 5
         },
         {
-          "type": "minecraft:item",
+          "type": "minecraft:tag",
           "expand": false,
           "functions": [
             {
